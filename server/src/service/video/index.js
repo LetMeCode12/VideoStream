@@ -16,7 +16,7 @@ const streamService = (range,fileName) =>{
         "Content-Range":`bytes ${start}-${end}/${videoSize}`,
         "Accet-Ranges": "bytes",
         "Content-Length": contentLength,
-        "Content-Type":"video/mp4"
+        // "Content-Type":"video/mp4"
     }
 
     const stream = fs.createReadStream(videoPath,{start,end});

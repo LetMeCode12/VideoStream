@@ -5,6 +5,8 @@ function App() {
 
   const [image,setImage] = useState(null);
 
+  const token = 'test1'
+
   useEffect(()=>{
     const fetchImage = async ()=>{
      const res = await fetch("http://localhost:8080/image/image.png")
@@ -22,7 +24,7 @@ function App() {
 
   return (
     <div className="App">     
-      {/* <video className='video' controls src='http://localhost:8080/stream/test.mp4'/> */}
+      <video className='video' controls src={`http://localhost:8080/stream/test.mp4?token=${token}`}/>
       <img src={image}/>
     </div>
   );
